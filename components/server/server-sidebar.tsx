@@ -204,7 +204,7 @@ const ServerSidebar: React.FC<ServerSidebarProps> = async ({ serverId }) => {
               server={server}
             />
 
-            {members.map((member: Member) => {
+            {members.map((member: any) => {
               return (
                 <ServerMember key={member.id} member={member} server={server} />
               );

@@ -10,7 +10,7 @@ import { modelType, useModel } from "@/hooks/use-model-store";
 interface ServerChannelProps {
   channel: Channel;
   server: Server;
-  role: memberRole;
+  role: memberRole | undefined;
 }
 
 const iconMap = {
