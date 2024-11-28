@@ -66,9 +66,9 @@ export default async function handler(
     }
 
     const member =
-      conversation.memberOne.profileId === profile.id
-        ? conversation.memberOne
-        : conversation.memberTwo;
+      conversation?.memberOne.profileId === profile.id
+        ? conversation?.memberOne
+        : conversation?.memberTwo;
 
     if (!member) {
       res.status(404).json({ message: "Member not found" });
@@ -79,7 +79,7 @@ export default async function handler(
         content,
         fileUrl,
         conversationId: conversationId as string,
-        memberId: member.id,
+        memberId: member!.id,
       },
       include: {
         member: {
