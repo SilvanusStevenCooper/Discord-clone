@@ -95,7 +95,7 @@ const ChatItem = ({
     window.addEventListener("keydown", handleKeyDown);
 
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  });
 
   const fileType = fileUrl?.split(".").pop();
   const isPDF = fileUrl && fileType === "pdf";
