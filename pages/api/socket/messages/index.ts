@@ -62,7 +62,7 @@ export default async function handler(
       res.status(404).json({ message: "channel not found" });
     }
 
-    const member = await server.members.find(
+    const member = server?.members.find(
       (member: any) => member.profileId === profile.id
     );
 
@@ -75,7 +75,7 @@ export default async function handler(
         content,
         fileUrl,
         channelId: channelId as string,
-        memberId: member.id,
+        memberId: member!.id,
       },
       include: {
         member: {
