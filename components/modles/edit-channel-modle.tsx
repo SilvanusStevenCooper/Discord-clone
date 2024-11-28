@@ -69,6 +69,7 @@ const EditChannelModel = () => {
   useEffect(() => {
     if (channel) {
       form.setValue("name", channel.name);
+      //@ts-ignore
       form.setValue("type", channel.type);
     }
   }, [form, channel]);
