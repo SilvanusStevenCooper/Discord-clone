@@ -10,6 +10,7 @@ const NavigationAction = () => {
     <div>
       <ActionTooltip side="right" align="center" label="Add a Server">
         <button
+          title="add"
           onClick={() => onOpen("createServer")}
           className="group flex items-center"
         >

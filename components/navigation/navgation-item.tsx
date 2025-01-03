@@ -20,7 +20,11 @@ const NavigationItem = ({ id, imageUrl, name }: NavigationItemProps) => {
   };
   return (
     <ActionTooltip side="right" align="center" label={name}>
-      <button onClick={onClick} className="group relative flex items-center">
+      <button
+        title="image"
+        onClick={onClick}
+        className="group relative flex items-center"
+      >
         <div
           className={cn(
             `absolute left-0 bg-primary 
