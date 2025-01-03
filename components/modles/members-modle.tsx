@@ -108,7 +108,7 @@ const MembersModel = () => {
             Manage Members
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
-            {server?.members.length} Members
+            {server?.members?.length} Members
           </DialogDescription>
         </DialogHeader>
         <ScrollArea className="mt-8 mx-h-[420px] pr-6">
