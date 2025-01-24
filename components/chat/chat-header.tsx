@@ -3,6 +3,8 @@ import MobileToggle from "../mobile-toggle";
 import UserAvatar from "../user-avatar";
 import { SocketIndicator } from "../socket-indicator";
 import ChatVideoButton from "./chat-video-button";
+import { ModeToggle } from "../mode-toggle";
+import { UserButton } from "@clerk/nextjs";
 
 interface ChatHeaderProps {
   serverId: string;
@@ -17,6 +19,7 @@ const ChatHeader = ({ serverId, name, type, imageUrl }: ChatHeaderProps) => {
     border-neutral-200 dark:border-neutral-800 border-b-2"
     >
       <MobileToggle serverId={serverId} />
+
       {type === "channel" && (
         <Hash className="h-5 w-5 text-zinc-500 dark:text-zinc-200" />
       )}
@@ -28,6 +31,16 @@ const ChatHeader = ({ serverId, name, type, imageUrl }: ChatHeaderProps) => {
       <div className="flex ml-auto items-center">
         {type === "conversation" && <ChatVideoButton />}
         <SocketIndicator />
+      </div>
+      <div className="md:hidden pl-2">
+        <UserButton
+          afterSignOutUrl="/"
+          appearance={{
+            elements: {
+              avatarBox: "h-[24px] w-[24px]",
+            },
+          }}
+        />
       </div>
     </div>
   );
