@@ -46,7 +46,7 @@ export const NavigationSidebar = async () => {
         <ModeToggle />
         <div className="hidden md:flex">
           <UserButton
-            afterSignOutUrl="https://discord-clone-alpha-mauve.vercel.app"
+            afterSignOutUrl="/sign-in"
             appearance={{
               elements: {
                 avatarBox: "h-[48px] w-[48px]",
